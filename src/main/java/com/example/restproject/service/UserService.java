@@ -30,4 +30,9 @@ public class UserService {
         }
         return User.toModel(user.get());
     }
+
+    public Long delete(Long id) {
+        userRepo.deleteById(id);
+        return id;
+    }
 }
