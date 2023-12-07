@@ -11,11 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoService {
 
-    @Autowired
-    private TodoRepo todoRepo;
+    private final TodoRepo todoRepo;
+    private final UserRepo userRepo;
 
     @Autowired
-    private UserRepo userRepo;
+    public TodoService(TodoRepo todoRepo, UserRepo userRepo) {
+        this.todoRepo = todoRepo;
+        this.userRepo = userRepo;
+    }
 
     public Todo createTodo(TodoEntity todo, Long userId) {
         UserEntity user = userRepo.findById(userId).get();

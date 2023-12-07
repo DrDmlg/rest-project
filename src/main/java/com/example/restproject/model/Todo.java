@@ -1,12 +1,18 @@
 package com.example.restproject.model;
 
 import com.example.restproject.entity.TodoEntity;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Builder
 public class Todo {
+
     private Long id;
     private String title;
     private Boolean completed;
-
 
     public static Todo tomModel(TodoEntity entity) {
         Todo model = new Todo();

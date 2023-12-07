@@ -22,6 +22,7 @@ public class UserEntity {
     }
 
     public UserEntity() {
+
     }
 
     public List<TodoEntity> getTodos() {
